@@ -11,6 +11,7 @@ let colors = ['#ff2e2e', '#71ff71', '#ffff20', '#ffa706', '#80ffff'];
 let attempts = 0;
 let sum = 0;
 let average = 0;
+let resetPressed = false;
 
 $button.addEventListener('click', clickButton);
 
@@ -19,6 +20,7 @@ function clickButton() {
     randomTime = ((Math.random() * 2.75) + 1.5) * 1000;
 
     if (waiting == true) {
+        resetPressed = false;
         play();
         waiting = false;
     }
@@ -28,9 +30,10 @@ function clickButton() {
         time = (end - start) / 1000;
 
         if (colorChange == false) {
-            $text.textContent = 'Demasiado pronto';
+            $text.textContent = 'Te apuraste';
             attempts--;
             $again.textContent = 'Toca para reiniciar';
+            resetPressed = true;
             waiting = true;
         }
         else {
@@ -54,12 +57,13 @@ function play() {
     $text.textContent = 'ATENCIÓN: Toca el círculo cuando cambie de color';
     $button.style['background-color'] = 'rgb(189, 189, 189)';
     setTimeout(function () {
-        if (!waiting) {
+        if (!resetPressed) {
             colorChange = true;
             colorIndex = Math.floor(Math.random() * 5);
             String(colorIndex);
             $button.style['background-color'] = colors[colorIndex];
             start = + new Date();
+            
         }
     }, randomTime);
 }

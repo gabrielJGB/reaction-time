@@ -5,11 +5,12 @@
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: rgb(255, 243, 226);
 
 }
 h1{
     text-align: center;
-    text-shadow:0 0 1px rgb(29, 29, 29);
+    text-shadow:0 0 1px rgb(148, 148, 148);
     width: 100%;
     margin:10px auto 0 auto;
 }
