@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+h1{
+    text-align: center;
+    text-shadow:0 0 1px rgb(29, 29, 29);
+    width: 100%;
+    margin:10px auto 0 auto;
+}
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(189, 189, 189);
+    margin: 40px auto 50px auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+    cursor: pointer;
+    border: solid 3px;
+    box-shadow: 0 0 10px black;
+}
+
+.button:active {
+    background-color: rgb(155, 155, 155);
+}
+
+.text {
+    text-align: center;
+
+    color: rgb(3, 10, 51);
+    font-size: 50px;
+
+}
+
+.play-again {
+    text-align: center;
+    font-size: 20px;
+    width: 80%;
+    color: rgb(3, 10, 51);
+
+}
+
+.info {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.info>div {
+    background-color: burlywood;
+    width: 100px;
+    border: solid 2px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+
+}
+
+.attempts,
+.average {
+    font-size: 30px;
+
+}
+
+.reset{
+    background-color: burlywood;
+    width: 43%;
+    padding: 30px 50px;
+    border: solid 2px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+
+}
+.reset:active{
+    background-color: rgb(197, 157, 104);
+}
+
+@media all and (max-width:600px) {
+
+    .button {
+        width: 280px;
+        height: 280px;
+        border-radius: 140px;
+    }
+
+    .text {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .play-again {
+        text-align: center;
+        font-size: 20px;
+        width: 80%;
+        color: rgb(3, 10, 51);
+
+    }
+
+    .info {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .info>div {
+        background-color: rgb(255, 229, 195);
+        width: 100px;
+        border: solid black 2px;
+        border-radius: 10px;
+
+    }
+
+    .attempts,
+    .average {
+        font-size: 30px;
+    }
+
+
+
+}
