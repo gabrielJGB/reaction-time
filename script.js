@@ -50,7 +50,7 @@ function clickButton() {
             colorChange = false;
             waiting = true;
 
-            if (attempts === 2) {
+            if (attempts === 10) {
                 if (Number(average) < 0.350) {
                     $body.style['background-color']= 'rgb(157, 255, 39)';
                     alert('Ganaste!');
