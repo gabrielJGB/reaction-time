@@ -3,6 +3,7 @@ const $text = document.querySelector('.text');
 const $again = document.querySelector('.play-again');
 const $attempts = document.querySelector('.attempts');
 const $average = document.querySelector('.average');
+const $body =document.querySelector('body');
 let start = 0, end = 0, randomTime = 0, timeFromStart;
 let colorChange = false;
 let waiting = true;
@@ -12,6 +13,8 @@ let attempts = 0;
 let sum = 0;
 let average = 0;
 let resetPressed = false;
+
+alert('Objetivo: Llegar a 10 intentos con un promedio menor a 0.350 segundos');
 
 $button.addEventListener('click', clickButton);
 
@@ -46,6 +49,21 @@ function clickButton() {
             $average.textContent = average;
             colorChange = false;
             waiting = true;
+
+            if (attempts === 2) {
+                if (Number(average) < 0.350) {
+                    $body.style['background-color']= 'rgb(157, 255, 39)';
+                    alert('Ganaste!');
+                    reset();
+
+
+                }
+                else {
+                    $body.style['background-color'] = 'rgb(255, 39, 39)';
+                    alert('Perdiste :(');
+                    reset();
+                }
+            }
         }
     }
 }
@@ -63,7 +81,7 @@ function play() {
             String(colorIndex);
             $button.style['background-color'] = colors[colorIndex];
             start = + new Date();
-            
+
         }
     }, randomTime);
 }
@@ -79,5 +97,6 @@ function reset() {
     $text.textContent = 'Empezar';
     $again.textContent = '';
     $button.style['background-color'] = 'rgb(189, 189, 189)';
+    $body.style['background-color'] = 'rgb(255, 243, 226)';
 }
 
